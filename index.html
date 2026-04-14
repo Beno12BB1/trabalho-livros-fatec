@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Livros - API Open Library</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Explorador de Livros</h1>
+        <p>Projeto para a disciplina de Linguagem de Programação</p>
+    </header>
+
+    <main>
+        <section id="busca-container">
+            <form id="form-busca">
+                <input type="text" id="input-livro" placeholder="Digite o nome do livro para buscar na API..." required>
+                <button type="submit">Pesquisar</button>
+            </form>
+        </section>
+
+        <div id="loading" style="display: none; text-align: center; margin-bottom: 20px; font-weight: bold; color: #2c3e50;">
+            Buscando livro...
+        </div>
+
+        <section id="favoritos-container">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                <h2>Meus Livros Salvos (<span id="contador">0</span>)</h2>
+                <input type="text" id="filtro-tabela" placeholder="Filtrar na minha lista..." style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 250px;">
+                <button id="btn-limpar-tudo" style="background-color: #95a5a6; padding: 8px 15px; font-size: 12px;">Limpar Tudo</button>
+            </div>
+
+            <table id="tabela-livros">
+                <thead>
+                    <tr>
+                        <th>Capa</th>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Ano</th>
+                        <th>Status</th> <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido para Fatec Itu - ADS</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
